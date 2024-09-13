@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias del Día</title>
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .noticia {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Noticias del Día</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarNoticia('titular')">titular</a></li>
+            <li><a href="#" onclick="mostrarNoticia('economia')">economia</a></li>
+            <li><a href="#" onclick="mostrarNoticia('deportes')">deportes</a></li>
+            <li><a href="#" onclick="mostrarNoticia('internacional')">internacional</a></li>
+            <li><a href="#" onclick="mostrarNoticia('sociales')">Sociales</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="titular" class="noticia">
+            <h2>titular</h2>
+            <p>"La NASA lanza con éxito la misión Artemis I hacia la Luna" Este evento ocurrió en noviembre de 2021 y marcó un importante paso en la exploración espacial.</p>
+        </div>
+        <div id="economia" class="noticia">
+            <h2>Economía</h2>
+            <p>La bolsa de valores alcanza nuevos máximos históricos impulsada por el sector tecnológico. Analistas predicen un crecimiento sostenido para el próximo trimestre.</p>
+        </div>
+
+        <div id="deportes" class="noticia">
+            <h2>Deportes</h2>
+            <p>El equipo local gana el campeonato nacional de fútbol en un emocionante partido final que se decidió en los últimos minutos del encuentro.</p>
+        </div>
+
+        <div id="internacional" class="noticia">
+            <h2>Internacional</h2>
+            <p>Líderes mundiales se reúnen en la cumbre sobre cambio climático para discutir nuevas estrategias y compromisos para reducir las emisiones de carbono.</p>
+        </div>
+
+        <div id="sociales" class="noticia">
+            <h2>Sociales</h2>
+            <p>La ciudad se prepara para el festival anual de arte y cultura, que contará con la participación de artistas locales e internacionales durante toda la semana.</p>
+        </div>
+    </main>
+
+    <script>
+        function mostrarNoticia(id) {
+            // Ocultar todas las noticias
+            var noticias = document.getElementsByClassName('noticia');
+            for (var i = 0; i < noticias.length; i++) {
+                noticias[i].style.display = 'none';
+            }
+            // Mostrar la noticia seleccionada
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
